@@ -11,11 +11,29 @@
   <!-- MAIN BODY -->
   <section id="gossip-section" class="py-1 mb-5" style="margin-top: 50px">
     <div class="container mt-2">
-      <h1>Bienvenue <%= @first_name %>! </h1>
+
+
       
-      <button type="button" class="btn btn-info">
-      <%= link_to 'Poster un nouveau potin', new_gossip_path, :class => "btn-info" %>
-      </button>
+
+      
+
+      
+
+
+
+      <div class="container">
+  <div class="row">
+    <div class="col col-3 align-self-center">
+      <a class="btn btn-danger rounded-circle" href="<%= new_gossip_path %>" role="button">Poster<br>un nouveau<br>potin</a>
+    </div>
+    <div class="col col-9 align-self-center text-justify">
+      <h1>Bienvenue <%= @first_name %>! </h1>
+    </div>
+  </div>
+</div>
+
+
+
 
       <h4 class="mb-5 mt-3">Voici la liste des potins des moussaillons de THP</h4>
         <div class="row mb-3">
