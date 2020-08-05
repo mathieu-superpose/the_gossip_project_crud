@@ -14,9 +14,10 @@
       <div class="card border-success mb-3" style="max-width: 18rem;">
       <div class="card-header"><%= @user.first_name %> <%= @user.last_name%></div>
       <div class="card-body text-success">
-        <h6 class="card-title">Age: <%= @user.age %> ans</h6>
-        
-        <h6 class="card-title"> <a href="/welcome">Ville:</a> <%= @user.city.name %></h6>
+        <h6 class="card-title">Age: <%= @user.age %> ans</h6>        
+        <h6 class="card-title">Ville: <a href="/cities/<%= @user.city.name %>/">
+          <%= @user.city.name %>
+        </a></h6>
         <h6 class="card-title">Email: <%= @user.email %></h6>
         <p class="card-text text-muted"><%= @user.description %></p>
       </div>

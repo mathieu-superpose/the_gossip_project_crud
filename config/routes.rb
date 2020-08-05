@@ -1,4 +1,11 @@
 Rails.application.routes.draw do
+  get 'cities/index'
+  get 'cities/show'
+  get 'cities/new'
+  get 'cities/create'
+  get 'cities/edit'
+  get 'cities/update'
+  get 'cities/destroy'
   #get 'gossips/show'
   root to:'welcome#show'
 
@@ -12,5 +19,6 @@ Rails.application.routes.draw do
 
   resources :profile
   resources :gossips
+  resources :cities
   
 end

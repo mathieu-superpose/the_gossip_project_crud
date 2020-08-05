@@ -25,7 +25,10 @@ class GossipsController < ApplicationController
     end
   end
 
-
-
+  def delete
+  @gossips = Gossip.find(params[:id])
+  @gossips.delete
+    redirect_to root_path
+  end
 
 end
