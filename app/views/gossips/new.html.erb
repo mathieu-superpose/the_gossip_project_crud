@@ -1,0 +1,37 @@
+<html>
+  <body>
+    <!-- ... -->
+
+    <% if @alert %>
+      <div class="alert alert-danger "><%= @message %></div>
+    <% end %>
+
+
+
+
+
+            <%= form_tag url_for(action: 'create'), method: "post" do %>
+
+
+
+            <%= label_tag 'Title' %>
+            <%= text_field_tag 'title', @post.title %>
+            </br>
+
+          
+            <%= label_tag 'Body' %>
+            <%= text_area_tag 'content', @post.content %>
+            </br>
+        
+      
+            <%= submit_tag "Create Post" %>
+            </br>
+            <% end %>
+
+
+  
+    <!-- ... -->
+  </body>
+</html>
+
+
