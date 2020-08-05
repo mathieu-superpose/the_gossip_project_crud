@@ -1,4 +1,4 @@
-# The Gossip Project - Views v1.0
+# The Gossip Project - CRUD
 _l'app putasse_
 
 <div style="text-align:center" align="center">
@@ -40,6 +40,11 @@ Réseau social de partage de potins, créé dans le cadre de The Hacking Project
   ```bash
   rails db:create #ou rails db:create:all #ou rake db:create:all
   rails db:migrate
+  ```
+- Alimentez la BDD en données factices
+  
+  ```bash
+  rails db:seed
   ```
   
  ## Améliorations possibles
