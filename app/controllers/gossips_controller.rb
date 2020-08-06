@@ -25,10 +25,31 @@ class GossipsController < ApplicationController
     end
   end
 
-  def delete
+  def destroy
   @gossips = Gossip.find(params[:id])
-  @gossips.delete
+  @gossips.destroy
     redirect_to root_path
   end
 
+  def edit
+    @gossip = Gossip.find(params[:id])
+  end
+
+  def update
+    @gossip = Gossip.find(params[:id])
+    gossip_params = 
+    if @gossip.update(post_params)
+      redirect_to root_path
+    else
+      render 'edit'
+    end
+  end
+
+  private
+  def post_params
+    params.require(:gossip).permit(:title, :content)
+  end
+  
 end
+
+

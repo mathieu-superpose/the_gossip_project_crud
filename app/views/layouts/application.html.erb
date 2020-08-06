@@ -18,17 +18,19 @@
       
 
     <div class="container">
-      <img style="height: 80px" src="<%= asset_path('the_gossip_project.png') %>" class="px-3 pt-3" alt="BIS">
-     <a class="navbar-brand" href="/">The Gossip Project ></a>
+      <img style="height: 80px" src="<%= asset_path('the_gossip_project_face.png') %>" class="px-3 pt-3" alt="BIS">
+      
+
+      <a class="px-3" href="<%= root_path %>">
+<img alt="BIS" src="<%= asset_path('the_gossip_project_text2.png') %>" style="height: 60px">
+</a>
+     
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
 
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav mr-auto">
-      <li class="nav-item active">
-       <%= link_to "Accueil", root_path, class: "nav-link" %>
-      </li>
       <li class="nav-item">
           <%= link_to "L'équipe", team_path, class: "nav-link" %>
       </li>

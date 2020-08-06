@@ -1,32 +1,35 @@
 <!DOCTYPE html>
 <html>
-
-<head>
-  <title>The Gossip Project</title>
-</head>
-
-<body>
-
-  <div class="container mt-4">
-    <h4>Potin:</h4>
-
-    <div class="row">
-      <div class="card border-success mb-3" style="max-width: 18rem;">
-        <div class="card-header">
-          <p><%= link_to "Auteur: " + @gossips.user.first_name , profile_path(:id => @gossips.user.first_name)%></p>
-        </div>
-        <div class="card-body">
-          <p class="card-text">Id: <%=  @gossips.id %></p>
-          <p class="card-text">Titre: <%=  @gossips.title  %></p>
-          <p class="card-text">Contenu: <%=  @gossips.content %></p>
-          <p class="card-text">Date de création: <%=  @gossips.created_at %></p>
-
-          <button type="button" class="btn btn-info" action="@gossips.delete" >Supprimer le potin
-      </button>
-
-        </div>
+   <head>
+      <title>The Gossip Project</title>
+   </head>
+   <body>
+      <div class="container mt-5">
+         <div class="row">
+            <div class="col-3">
+               <div class="card border-success mb-5" style="max-width: 18rem;">
+                  <div class="card-header">
+                     <h4 class="card-text pl-4">Potin <%=  @gossips.id %>:</h4>
+                     <p class="h3 card-text pl-4"><%=  @gossips.title  %></p>
+                     <p class="small pl-4">Le <%=  @gossips.created_at %></p>
+                  </div>
+                  <div class="card-body">
+                     <p class="card-text"><%=  @gossips.content %></p>
+                     <p class="text-right"><%= link_to @gossips.user.first_name , profile_path(:id => @gossips.user.id)%></p>
+                  </div>
+                  <div class="card-footer">
+                     <div>
+                        <%= link_to 'Supprimer', gossip_path(@gossips.id), method: "delete", :class => "btn btn-secondary", style:"font-size:smaller" %>
+                        <%= link_to 'Editer', edit_gossip_path, :class => "btn btn-secondary", style:"font-size:smaller"%>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         
+         <div class="col-9">
+            <img class= "rounded-circle img-fluid ml-5 mt-3" alt="profile pic" src="<%= asset_path("bouche2.png") %>" style="height:300px;width:300px">
+         </div>
+         </div>
       </div>
-    </div>
-  </div>
-</body>
+   </body>
 </html>
